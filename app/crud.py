@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-import models, schemas
+import app.models, app.schemas
 
-def create_author(db: Session, author: schemas.AuthorCreate):
+def create_author(db: Session, author: app.schemas.AuthorCreate):
     db_author = models.Author(name=author.name, img=author.img, link=author.link)
     db.add(db_author)
     db.commit()
@@ -17,7 +17,7 @@ def get_author(db: Session, author_id: int):
 def get_author_by_name(db: Session, author_name: str):
     return db.query(models.Author).filter(models.Author.name == author_name).first()
 
-def create_user(db: Session, user: schemas.UserCreate):
+def create_user(db: Session, user: app.schemas.UserCreate):
     db_user = models.User(os_type=user.os_type, email=user.email)
     db.add(db_user)
     db.commit()
