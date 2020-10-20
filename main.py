@@ -7,8 +7,8 @@ import database
 from database import engine
 from database import SessionLocal
 
-from fastapi_admin.factory import app as admin_app
-from fastapi_admin.site import Site
+#from fastapi_admin.factory import app as admin_app
+#from fastapi_admin.site import Site
 
 from tortoise.contrib.fastapi import register_tortoise
 from sqlalchemy.orm import Session
