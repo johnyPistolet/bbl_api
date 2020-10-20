@@ -6,51 +6,11 @@ import schemas
 import database
 from database import engine
 from database import SessionLocal
-
-#from fastapi_admin.factory import app as admin_app
-#from fastapi_admin.site import Site
-
-from tortoise.contrib.fastapi import register_tortoise
 from sqlalchemy.orm import Session
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-
-
-#register_tortoise(
-#    app,
-#    config={
-#        'connections': {
-#            'default': 'mysql://root:our_sec_pass@localhost:3306/bbl_rest_api',
-#        },
-#        'apps': {
-#        #    'models': {
-#        #        'models': ['fastapi_admin.models', 'models'],
-#        #        'default_connection': 'default',
-#        #    }
-#        }
-#    }, generate_schemas=True, add_exception_handlers=True,
-#)
-
-#register_tortoise(fast_app, config=TORTOISE_ORM, generate_schemas=True)
-
-#app.mount('/admin', admin_app)
-#
-#@app.on_event('startup')
-#async def startup():
-#    admin_app.init(
-#        admin_secret="test",
-#        permission=True,
-#        site=Site(
-#            name="FastAPI-Admin DEMO",
-#            login_footer="FASTAPI ADMIN - FastAPI Admin Dashboard",
-#            login_description="FastAPI Admin Dashboard",
-#            locale="en-US",
-#            locale_switcher=True,
-#            theme_switcher=True,
-#        ),
-#    )
 
 
 # Dependency
